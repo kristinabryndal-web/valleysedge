@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valley's Edge | Farm · LLC</title>
+  <meta name="description" content="Valley's Edge — a working farm in Burr Ridge, IL. Something is taking root here." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #d4b86a;
+      --green: #6b8a52;
+      --dark-bg: #17140f;
+      --card-bg: #1f1a10;
+      --ground: #2a2218;
+      --text-primary: #f0e6c8;
+      --text-secondary: #7a7060;
+      --text-muted: #4a4438;
+      --border-gold: rgba(180, 150, 80, 0.22);
+      --border-green: rgba(107, 138, 82, 0.3);
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 0.5px solid rgba(180, 150, 80, 0.12);
+    }
+
+    .logo-type {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+
+    .logo-sub {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-top: 3px;
+    }
+
+    .status-badge {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      border: 0.5px solid var(--border-green);
+      padding: 4px 14px;
+      border-radius: 2px;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      padding: 4rem 2.5rem;
+      align-items: center;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.85rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 1.1rem;
+    }
+
+    h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .body-copy {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1.25rem;
+    }
+
+    input[type="email"] {
+      background: rgba(255, 255, 255, 0.04);
+      border: 0.5px solid var(--border-gold);
+      color: var(--text-primary);
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      padding: 0.65rem 1rem;
+      border-radius: 2px;
+      flex: 1;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input[type="email"]:focus {
+      border-color: rgba(212, 184, 106, 0.55);
+    }
+
+    input[type="email"]::placeholder {
+      color: var(--text-muted);
+    }
+
+    button {
+      background: transparent;
+      border: 0.5px solid var(--gold);
+      color: var(--gold);
+      font-size: 10px;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.4rem;
+      border-radius: 2px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: rgba(212, 184, 106, 0.08);
+    }
+
+    .meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .logo-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer {
+      border-top: 0.5px solid rgba(180, 150, 80, 0.1);
+      padding: 1.1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer span {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    /* Thank-you state */
+    .thank-you {
+      display: none;
+      font-size: 12px;
+      color: var(--green);
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+      }
+      .logo-side { order: -1; }
+      .logo-side svg { width: 160px; height: auto; }
+      .input-row { flex-direction: column; }
+      button { width: 100%; }
+      nav { padding: 1rem 1.5rem; }
+      footer { padding: 1rem 1.5rem; flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>
+      <div class="logo-type">Valley's Edge</div>
+      <div class="logo-sub">Farm &nbsp;·&nbsp; LLC</div>
+    </div>
+    <div class="status-badge">Coming soon</div>
+  </nav>
+
+  <main>
+    <div>
+      <div class="eyebrow">Burr Ridge, Illinois</div>
+      <h1>Rooted deep.<br><em>Growing smart.</em></h1>
+      <p class="body-copy">Valley's Edge is a working farm — patient, deliberate, and built to yield. Something is taking root here. We'll let you know when it's ready.</p>
+
+      <form class="input-row" onsubmit="handleSubmit(event)">
+        <input type="email" id="email-input" placeholder="your@email.com" required />
+        <button type="submit">Keep me posted</button>
+      </form>
+
+      <div class="thank-you" id="thank-you">Thanks — we'll be in touch.</div>
+      <div class="meta" id="meta-line">valleysedge.co &nbsp;·&nbsp; Burr Ridge, IL</div>
+    </div>
+
+    <div class="logo-side">
+      <img src="logo.png" alt="Valley's Edge" width="280" style="max-width:100%;" />
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2025 Valley's Edge LLC</span>
+    <span><a href="mailto:hello@valleysedge.co">hello@valleysedge.co</a></span>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.querySelector('.input-row').style.display = 'none';
+      document.getElementById('thank-you').style.display = 'block';
+      document.getElementById('meta-line').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
